@@ -69,10 +69,10 @@
         };
     }
 
-    document.addEventListener('DOMContentLoaded', function(){
-        let container=document.getElementById('todo-app');
+    function createTodoApp(container, title='Список дел'){
+        //let container=document.getElementById('todo-app');
 
-        let todoAppTitle=createAppTitle('Список дел :');
+        let todoAppTitle=createAppTitle(title);
         let todoItemForm=createTodoItemForm();
         let todoList=createTodoList();
         //let todoItems=[createTodoItem('Сходить за хлебом'), createTodoItem('Купить молоко')];
@@ -110,8 +110,14 @@
             todoItemForm.input.value='';
 
         })
+    }
 
-    })
+    // document.addEventListener('DOMContentLoaded', function(){
+    //         createTodoApp(document.getElementById('my-todos'), "Мои дела");
+    //         createTodoApp(document.getElementById('mom-todos'), "Дела мамы");
+    //         createTodoApp(document.getElementById('dad-todos'), "Дела папы");
+    // })
 
+    window.createTodoApp=createTodoApp;
 
     })();
